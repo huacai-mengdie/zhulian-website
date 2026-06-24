@@ -7,23 +7,24 @@
       name="description"
       content="筑脸科技文化产融中心，四位一体产业运营平台，链接建筑全产业链，赋能中小企业成长。"
     />
-    <meta name="theme-color" content="#f7f3ea" />
+    <meta name="theme-color" content="#f7f8ff" />
+    <link rel="icon" type="image/png" href="assets/company-logo.png" />
     <title>筑脸科技文化产融中心｜四位一体产业运营平台</title>
     <style>
       :root {
-        --ink: #172033;
-        --muted: #667085;
-        --line: #e6dfd1;
-        --paper: #fbf8f1;
-        --cream: #f4eee2;
-        --teal: #0f8f92;
-        --teal-dark: #0c6264;
-        --gold: #bd8a38;
-        --blue: #274b74;
-        --white: #ffffff;
-        --shadow: 0 18px 48px rgba(36, 45, 61, 0.11);
-        --radius: 8px;
-        --container: 1000px;
+        --page: #f6f7ff;
+        --panel: #ffffff;
+        --ink: #141b43;
+        --muted: #68708f;
+        --soft: #eef0ff;
+        --line: #e5e7f5;
+        --primary: #1f73ff;
+        --blue-2: #62a6ff;
+        --blue: #3551cf;
+        --gold: #d6ad67;
+        --shadow: 0 18px 46px rgba(55, 67, 129, 0.12);
+        --radius: 14px;
+        --container: 1180px;
       }
 
       * {
@@ -36,14 +37,14 @@
 
       body {
         margin: 0;
-        color: var(--ink);
+        min-height: 100vh;
+        overflow-x: hidden;
         background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(247, 243, 234, 0.94)),
-          var(--paper);
+          radial-gradient(circle at 50% 0%, rgba(55, 132, 255, 0.14), transparent 34%),
+          linear-gradient(180deg, #f3f5ff 0%, #ffffff 55%, #f8f8ff 100%);
+        color: var(--ink);
         font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
           "Microsoft YaHei", sans-serif;
-        line-height: 1.6;
-        overflow-x: hidden;
       }
 
       a {
@@ -51,13 +52,23 @@
         text-decoration: none;
       }
 
-      button,
-      input {
+      button {
         font: inherit;
       }
 
+      .shell {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        overflow: hidden;
+        border: 0;
+        border-radius: 0;
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: none;
+      }
+
       .container {
-        width: min(var(--container), calc(100% - 40px));
+        width: min(var(--container), calc(100% - 64px));
         margin: 0 auto;
       }
 
@@ -65,16 +76,22 @@
         position: sticky;
         top: 0;
         z-index: 20;
-        border-bottom: 1px solid rgba(230, 223, 209, 0.78);
-        background: rgba(251, 248, 241, 0.9);
+        background: rgba(255, 255, 255, 0.82);
         backdrop-filter: blur(18px);
       }
 
+      main {
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 78% 10%, rgba(28, 150, 255, 0.1), transparent 30%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(246, 249, 255, 0.92));
+      }
+
       .nav {
-        display: flex;
-        min-height: 72px;
+        display: grid;
+        grid-template-columns: 1.25fr auto 1.25fr;
+        min-height: 84px;
         align-items: center;
-        justify-content: space-between;
         gap: 28px;
       }
 
@@ -82,129 +99,129 @@
         display: inline-flex;
         align-items: center;
         gap: 12px;
-        min-width: 238px;
-        font-weight: 800;
-        letter-spacing: 0;
+        color: #202852;
+        font-weight: 900;
       }
 
       .brand-mark {
-        display: grid;
-        width: 40px;
-        height: 40px;
+        display: inline-grid;
+        width: 42px;
+        height: 42px;
         place-items: center;
-        border-radius: var(--radius);
-        color: var(--white);
-        background: linear-gradient(135deg, var(--teal), var(--blue));
-        box-shadow: 0 10px 24px rgba(15, 143, 146, 0.24);
+        flex: 0 0 auto;
       }
 
-      .brand-mark svg {
-        width: 25px;
-        height: 25px;
+      .icon svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .brand-mark img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 18px rgba(239, 103, 0, 0.18));
+      }
+
+      .module-card .icon img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
 
       .nav-links {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 26px;
-        color: #384155;
-        font-size: 14px;
-        font-weight: 700;
+        gap: 34px;
+        color: #2c335f;
+        font-size: 16px;
+        font-weight: 850;
       }
 
       .nav-links a {
-        padding: 8px 0;
-        border-bottom: 2px solid transparent;
+        position: relative;
+        padding: 10px 0;
       }
 
-      .nav-links a:hover,
-      .nav-links a:focus-visible {
-        color: var(--teal-dark);
-        border-color: var(--teal);
-        outline: none;
+      .nav-links a:first-child::after,
+      .nav-links a:hover::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 3px;
+        border-radius: 999px;
+        background: var(--primary);
       }
 
       .nav-actions {
         display: flex;
+        justify-content: end;
+        gap: 14px;
+      }
+
+      .contact-pill {
+        display: inline-flex;
+        height: 36px;
         align-items: center;
-        gap: 12px;
+        justify-content: center;
+        border: 1px solid #cfd4ef;
+        border-radius: 999px;
+        padding: 0 22px;
+        color: #2d366c;
+        background: #fff;
+        font-size: 13px;
+        font-weight: 900;
       }
 
-      .text-link {
-        border: 0;
-        color: var(--teal-dark);
-        background: transparent;
-        font-size: 14px;
-        font-weight: 800;
-        cursor: pointer;
+      .login-pill {
+        border-color: transparent;
+        color: #fff;
+        background: linear-gradient(135deg, #1f73ff, #0b8fe8);
+        box-shadow: 0 10px 22px rgba(31, 115, 255, 0.2);
       }
 
-      .icon-button {
+      .search-button {
         display: grid;
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
         place-items: center;
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        color: var(--blue);
-        background: rgba(255, 255, 255, 0.74);
+        border: 0;
+        color: #2c3569;
+        background: transparent;
         cursor: pointer;
-      }
-
-      .icon-button svg {
-        width: 18px;
-        height: 18px;
       }
 
       .hero {
         position: relative;
-        overflow: hidden;
-        min-height: 660px;
-        padding: 86px 0 72px;
-        background:
-          linear-gradient(90deg, rgba(251, 248, 241, 0.98) 0%, rgba(251, 248, 241, 0.92) 44%, rgba(255, 255, 255, 0.16) 74%),
-          url("assets/hero-industrial-park.png") right center / min(58vw, 850px) auto no-repeat,
-          linear-gradient(120deg, #f7f1e5 0%, #eef4f2 56%, #f7f3ea 100%);
-      }
-
-      .hero::after {
-        content: "";
-        position: absolute;
-        inset: auto 0 0;
-        height: 96px;
-        background: linear-gradient(180deg, rgba(251, 248, 241, 0), var(--paper));
-        pointer-events: none;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
         display: grid;
-        max-width: 560px;
-        gap: 24px;
+        grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr);
+        gap: 30px;
+        min-height: 560px;
+        align-items: center;
+        padding: 34px 0 54px;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 2;
       }
 
       .eyebrow {
         display: inline-flex;
-        width: fit-content;
         align-items: center;
         gap: 10px;
-        border: 1px solid rgba(15, 143, 146, 0.18);
+        border: 1px solid rgba(31, 115, 255, 0.28);
         border-radius: 999px;
-        padding: 8px 14px;
-        color: var(--teal-dark);
+        padding: 9px 18px;
+        color: var(--primary);
         background: rgba(255, 255, 255, 0.72);
-        font-size: 13px;
-        font-weight: 800;
-      }
-
-      .eyebrow::before {
-        content: "";
-        width: 7px;
-        height: 7px;
-        border-radius: 999px;
-        background: var(--gold);
+        font-size: 20px;
+        font-weight: 900;
       }
 
       h1,
@@ -215,12 +232,11 @@
       }
 
       h1 {
-        max-width: 680px;
-        font-size: clamp(44px, 5.2vw, 74px);
-        line-height: 1.04;
-        font-weight: 900;
+        margin-top: 34px;
+        font-size: clamp(38px, 5vw, 58px);
+        line-height: 1.12;
+        font-weight: 950;
         letter-spacing: 0;
-        overflow-wrap: anywhere;
       }
 
       h1 span {
@@ -228,797 +244,1379 @@
       }
 
       .hero-subtitle {
-        color: var(--blue);
-        font-size: clamp(24px, 2.4vw, 34px);
-        font-weight: 850;
-        letter-spacing: 0;
+        margin-top: 12px;
+        color: #1f2c65;
+        font-size: clamp(26px, 3vw, 36px);
+        font-weight: 900;
       }
 
       .lead {
-        max-width: 530px;
-        color: #4e596d;
+        margin-top: 18px;
+        color: #555f82;
+        font-size: 16px;
+        font-weight: 650;
+        line-height: 1.9;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 34px;
+      }
+
+      .btn {
+        display: inline-flex;
+        min-width: 126px;
+        height: 44px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #d7daf1;
+        border-radius: 7px;
+        color: #28315f;
+        background: #fff;
+        font-size: 14px;
+        font-weight: 900;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        border-color: transparent;
+        color: #fff;
+        background: linear-gradient(135deg, #1f73ff, #0b8fe8);
+        box-shadow: 0 14px 28px rgba(31, 115, 255, 0.26);
+      }
+
+      .hero-icons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        max-width: 430px;
+        margin-top: 48px;
+      }
+
+      .mini-feature {
+        display: grid;
+        gap: 10px;
+        justify-items: center;
+        color: #6e7292;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .hero-icons .icon,
+      .about-tags .icon {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+      }
+
+      .hero-icons .icon img,
+      .about-tags .icon img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .hero-art {
+        position: relative;
+        display: grid;
+        min-height: 480px;
+        place-items: center;
+      }
+
+      .hero-visual {
+        position: relative;
+        width: min(100%, 720px);
+      }
+
+      .hero-art img {
+        display: block;
+        width: 100%;
+        max-height: 510px;
+        object-fit: contain;
+        filter: drop-shadow(0 24px 44px rgba(72, 73, 145, 0.18));
+      }
+
+      .data-card {
+        position: absolute;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 38px;
+        gap: 10px;
+        align-items: center;
+        width: clamp(180px, 33%, 210px);
+        min-height: 82px;
+        border: 1px solid rgba(188, 213, 255, 0.9);
+        border-radius: 15px;
+        padding: 14px;
+        color: #153263;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow:
+          0 14px 30px rgba(49, 108, 190, 0.14),
+          inset 0 1px 0 rgba(255, 255, 255, 0.95);
+        cursor: pointer;
+        backdrop-filter: blur(14px);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          border-color 180ms ease,
+          background 180ms ease;
+      }
+
+      .data-card:hover,
+      .data-card:focus-visible,
+      .data-card.is-active {
+        transform: translateY(-5px);
+        border-color: rgba(31, 115, 255, 0.62);
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow:
+          0 20px 42px rgba(31, 115, 255, 0.22),
+          0 0 0 4px rgba(31, 115, 255, 0.08);
+        outline: none;
+      }
+
+      .data-card.is-active {
+        transform: translateY(-5px) scale(1.02);
+      }
+
+      .data-label {
+        display: block;
+        color: #6f7b9a;
+        font-size: 12px;
+        font-weight: 850;
+        white-space: nowrap;
+      }
+
+      .data-number {
+        display: block;
+        margin-top: 3px;
+        color: #1f73ff;
+        font-size: clamp(22px, 2.1vw, 28px);
+        line-height: 1;
+        font-weight: 950;
+        white-space: nowrap;
+      }
+
+      .data-desc {
+        display: block;
+        margin-top: 5px;
+        color: #6d7896;
+        font-size: 11px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .data-icon {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border-radius: 12px;
+        color: #1f73ff;
+        background: rgba(31, 115, 255, 0.08);
+        justify-self: end;
+      }
+
+      .data-icon svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .data-card-ecosystem {
+        right: 2%;
+        top: 7%;
+      }
+
+      .data-card-projects {
+        right: -3%;
+        top: 35%;
+      }
+
+      .data-card-city {
+        left: 2%;
+        bottom: 0;
+      }
+
+      .data-card-enterprise {
+        right: -1%;
+        bottom: 0;
+      }
+
+      .section {
+        padding: 36px 0;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: var(--shadow);
+      }
+
+      .about-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 520px;
+        gap: 42px;
+        padding: 42px;
+      }
+
+      .section-title {
+        color: var(--ink);
+        font-size: 32px;
+        line-height: 1.2;
+        font-weight: 950;
+        letter-spacing: 0;
+      }
+
+      .title-mark::after {
+        content: "";
+        display: block;
+        width: 42px;
+        height: 4px;
+        margin-top: 12px;
+        border-radius: 999px;
+        background: var(--primary);
+      }
+
+      .copy {
+        display: grid;
+        gap: 16px;
+        margin-top: 28px;
+        color: #5d6687;
+        font-size: 15px;
+        font-weight: 620;
+        line-height: 1.9;
+      }
+
+      .about-tags {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .video-card {
+        position: relative;
+        overflow: hidden;
+        align-self: center;
+        border-radius: 12px;
+        box-shadow: 0 18px 38px rgba(39, 51, 98, 0.18);
+      }
+
+      .video-card img,
+      .video-card video {
+        display: block;
+        width: 100%;
+        min-height: 300px;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .play {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        color: #fff;
+      }
+
+      .play::before {
+        content: "▶";
+        display: grid;
+        width: 72px;
+        height: 72px;
+        place-items: center;
+        border: 3px solid rgba(255, 255, 255, 0.9);
+        border-radius: 999px;
+        background: rgba(16, 24, 55, 0.2);
+        font-size: 28px;
+        text-indent: 4px;
+      }
+
+      .video-label {
+        position: absolute;
+        left: 22px;
+        bottom: 18px;
+        display: none;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 900;
+      }
+
+      .video-card video {
+        background: #0f1730;
+      }
+
+      .center-title {
+        margin-bottom: 28px;
+        text-align: center;
+      }
+
+      .center-title .section-title::after {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .matrix-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 42px;
+      }
+
+      .module-card {
+        position: relative;
+        display: grid;
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 20px;
+        align-items: center;
+        min-height: 102px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 18px 22px;
+        color: inherit;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(55, 67, 129, 0.06);
+        overflow: hidden;
+        transition:
+          transform 180ms ease,
+          border-color 180ms ease,
+          box-shadow 180ms ease,
+          background 180ms ease;
+      }
+
+      .module-card::after {
+        content: "→";
+        position: absolute;
+        right: 18px;
+        top: 18px;
+        display: grid;
+        width: 26px;
+        height: 26px;
+        place-items: center;
+        border-radius: 999px;
+        color: #fff;
+        background: var(--primary);
+        font-size: 15px;
+        font-weight: 900;
+        opacity: 0;
+        transform: translateX(8px);
+        transition:
+          opacity 180ms ease,
+          transform 180ms ease;
+      }
+
+      .module-card:hover,
+      .module-card:focus-visible {
+        transform: translateY(-5px);
+        border-color: rgba(31, 115, 255, 0.45);
+        background: linear-gradient(135deg, #ffffff, #f4f9ff);
+        box-shadow:
+          0 18px 38px rgba(31, 115, 255, 0.14),
+          0 0 0 4px rgba(31, 115, 255, 0.06);
+        outline: none;
+      }
+
+      .module-card:hover::after,
+      .module-card:focus-visible::after {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .module-card:hover .icon,
+      .module-card:focus-visible .icon {
+        transform: scale(1.08);
+      }
+
+      .icon {
+        display: grid;
+        width: 58px;
+        height: 58px;
+        place-items: center;
+        color: var(--blue-2);
+        transition: transform 180ms ease;
+      }
+
+      .module-card h3,
+      .service-list h3,
+      .value-card h3 {
+        color: #1b2456;
         font-size: 18px;
-        overflow-wrap: anywhere;
+        line-height: 1.35;
+        font-weight: 950;
+      }
+
+      .module-card p,
+      .value-card p {
+        margin-top: 4px;
+        color: #6d7491;
+        font-size: 13px;
+        font-weight: 650;
+      }
+
+      .product-panel {
+        padding: 42px;
+      }
+
+      .product-note {
+        margin-top: 10px;
+        color: #6d7491;
+        font-size: 14px;
+        font-weight: 650;
+      }
+
+      .product-body {
+        display: grid;
+        grid-template-columns: 310px 1fr;
+        gap: 30px;
+        align-items: start;
+        margin-top: 28px;
+      }
+
+      .ai-visual img {
+        display: block;
+        width: 100%;
+        transform: translateY(-14px);
+      }
+
+      .service-columns {
+        display: grid;
+        grid-template-columns: 0.9fr 1.35fr;
+        gap: 18px;
+      }
+
+      .service-list {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 22px;
+        background: linear-gradient(180deg, #fafaff, #fff);
+      }
+
+      .service-items {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .extend .service-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .service-item {
+        display: flex;
+        min-height: 42px;
+        align-items: center;
+        gap: 10px;
+        border-radius: 8px;
+        padding: 0 12px;
+        color: #485174;
+        background: #fff;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .service-item span {
+        color: var(--primary);
+        font-weight: 950;
+      }
+
+      .offline-title {
+        margin-bottom: 24px;
+        text-align: center;
+      }
+
+      .offline-title .section-title::after {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .offline-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+      }
+
+      .offline-card {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(220px, 0.78fr);
+        gap: 18px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 20px;
+        background: linear-gradient(135deg, #f6fbff, #ffffff);
+      }
+
+      .offline-card.gold {
+        background: linear-gradient(135deg, #fffaf0, #ffffff);
+      }
+
+      .offline-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 46%, rgba(255, 255, 255, 0.12) 100%);
+        pointer-events: none;
+      }
+
+      .offline-card > div {
+        position: relative;
+        z-index: 2;
+      }
+
+      .offline-card h3 {
+        color: var(--primary);
+        font-size: 18px;
+        font-weight: 950;
+      }
+
+      .gold h3 {
+        color: #b37b2d;
+      }
+
+      .offline-list {
+        display: grid;
+        gap: 8px;
+        margin-top: 14px;
+      }
+
+      .offline-list p {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        align-items: center;
+        border-radius: 8px;
+        padding: 8px 10px;
+        color: #535d83;
+        background: rgba(255, 255, 255, 0.82);
+        font-size: 13px;
+        font-weight: 820;
+      }
+
+      .offline-list span {
+        color: var(--blue-2);
+      }
+
+      .offline-card img {
+        position: relative;
+        z-index: 0;
+        align-self: end;
+        width: 100%;
+        height: 100%;
+        min-height: 250px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: right bottom;
+      }
+
+      .value-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .value-card {
+        position: relative;
+        min-height: 260px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 30px 28px;
+        background: linear-gradient(135deg, #fff 0%, #fff 52%, #f4f9ff 100%);
+        box-shadow: 0 12px 30px rgba(55, 67, 129, 0.08);
+      }
+
+      .value-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 45%, rgba(255, 255, 255, 0.16) 100%);
+        pointer-events: none;
+      }
+
+      .value-card-content {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        max-width: 78%;
+        gap: 14px;
+      }
+
+      .value-card-head {
+        display: grid;
+        grid-template-columns: 48px minmax(0, 1fr);
+        align-items: center;
+        gap: 14px;
+      }
+
+      .value-card-content > p {
+        margin-left: 62px;
+      }
+
+      .value-card .icon {
+        display: grid;
+        width: 48px;
+        height: 48px;
+        place-items: center;
+        margin-bottom: 0;
+        color: var(--primary);
+        font-size: 24px;
+      }
+
+      .value-card img {
+        position: absolute;
+        right: -18px;
+        bottom: -10px;
+        z-index: 0;
+        width: 96%;
+        height: 100%;
+        max-height: none;
+        object-fit: cover;
+        object-position: right bottom;
+        opacity: 0.9;
+        pointer-events: none;
+      }
+
+      .cta-banner {
+        position: relative;
+        overflow: hidden;
+        min-height: 170px;
+        border-radius: 0;
+        color: #fff;
+        text-align: center;
+        background:
+          radial-gradient(circle at 18% 20%, rgba(125, 207, 255, 0.34), transparent 32%),
+          radial-gradient(circle at 84% 78%, rgba(0, 194, 255, 0.28), transparent 30%),
+          linear-gradient(120deg, #071d69 0%, #0f5ed7 48%, #00a8ff 100%);
+      }
+
+      .cta-banner .container {
+        display: grid;
+        min-height: 170px;
+        place-items: center;
+        gap: 18px;
+        padding: 24px 0;
+      }
+
+      .cta-banner h2 {
+        font-size: clamp(26px, 3.5vw, 42px);
+        font-weight: 950;
+      }
+
+      .cta-banner p {
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 17px;
+        font-weight: 750;
+      }
+
+      .cta-button {
+        display: inline-flex;
+        height: 48px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 0 34px;
+        color: #5b421e;
+        background: linear-gradient(135deg, #f4d79a, #d7a456);
+        font-weight: 950;
+      }
+
+      .footer {
+        padding: 32px 0;
+        background: #fff;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1.1fr 120px 0.8fr;
+        gap: 28px;
+        align-items: center;
+      }
+
+      .footer .brand {
+        align-items: start;
+      }
+
+      .footer-small {
+        margin-top: 8px;
+        color: #727893;
+        font-size: 13px;
+        font-weight: 650;
+      }
+
+      .footer-slogan {
+        color: #1f2858;
+        font-size: 22px;
+        font-weight: 950;
+      }
+
+      .qr {
+        display: grid;
+        width: 96px;
+        height: 96px;
+        place-items: center;
+        border: 6px solid #fff;
+        border-radius: 4px;
+        background: #fff;
+        box-shadow:
+          0 10px 22px rgba(30, 45, 90, 0.1),
+          inset 0 0 0 1px #d9ddf2;
+      }
+
+      .qr img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .back-to-top {
+        position: fixed;
+        right: clamp(18px, 3vw, 42px);
+        bottom: clamp(18px, 3vw, 42px);
+        z-index: 60;
+        display: inline-flex;
+        min-width: 128px;
+        height: 50px;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        border: 1px solid rgba(184, 211, 255, 0.92);
+        border-radius: 999px;
+        color: #fff;
+        background: linear-gradient(135deg, #1f73ff, #0b8fe8);
+        box-shadow:
+          0 18px 38px rgba(31, 115, 255, 0.24),
+          0 0 0 6px rgba(31, 115, 255, 0.08);
+        font-size: 14px;
+        font-weight: 950;
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(16px);
+        transition:
+          opacity 180ms ease,
+          transform 180ms ease,
+          box-shadow 180ms ease;
+      }
+
+      .back-to-top.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .back-to-top:hover,
+      .back-to-top:focus-visible {
+        box-shadow:
+          0 22px 46px rgba(31, 115, 255, 0.32),
+          0 0 0 7px rgba(31, 115, 255, 0.12);
+        outline: none;
+        transform: translateY(-3px);
+      }
+
+      .back-to-top svg {
+        width: 19px;
+        height: 19px;
       }
 
       .mobile-break {
         display: none;
       }
 
-      .hero-actions,
-      .footer-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        padding-top: 8px;
-      }
-
-      .btn {
-        display: inline-flex;
-        min-height: 46px;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border: 1px solid transparent;
-        border-radius: var(--radius);
-        padding: 0 20px;
-        font-size: 15px;
-        font-weight: 850;
-        cursor: pointer;
-        transition:
-          transform 180ms ease,
-          box-shadow 180ms ease,
-          border-color 180ms ease;
-      }
-
-      .btn:hover {
-        transform: translateY(-1px);
-      }
-
-      .btn-primary {
-        color: var(--white);
-        background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-        box-shadow: 0 14px 26px rgba(15, 143, 146, 0.22);
-      }
-
-      .btn-secondary {
-        color: var(--blue);
-        border-color: rgba(39, 75, 116, 0.2);
-        background: rgba(255, 255, 255, 0.8);
-      }
-
-      .btn-gold {
-        color: #fff8ea;
-        background: linear-gradient(135deg, #d5a553, #a87325);
-        box-shadow: 0 14px 26px rgba(189, 138, 56, 0.24);
-      }
-
-      .section {
-        padding: 88px 0;
-      }
-
-      .section:nth-of-type(even) {
-        background: rgba(255, 255, 255, 0.58);
-      }
-
-      .section-head {
-        display: flex;
-        align-items: end;
-        justify-content: space-between;
-        gap: 28px;
-        margin-bottom: 34px;
-      }
-
-      .section-kicker {
-        color: var(--gold);
-        font-size: 13px;
-        font-weight: 900;
-      }
-
-      .section-title {
-        margin-top: 8px;
-        color: var(--ink);
-        font-size: clamp(28px, 3.4vw, 44px);
-        line-height: 1.16;
-        font-weight: 900;
-      }
-
-      .section-note {
-        max-width: 360px;
-        color: var(--muted);
-        font-size: 15px;
-      }
-
-      .about-layout {
-        display: grid;
-        grid-template-columns: 1.14fr 0.86fr;
-        gap: 36px;
-        align-items: stretch;
-      }
-
-      .article-copy {
-        display: grid;
-        gap: 18px;
-        color: #3f485b;
-        font-size: 16px;
-      }
-
-      .media-panel {
-        position: relative;
-        min-height: 380px;
-        overflow: hidden;
-        border: 1px solid rgba(230, 223, 209, 0.9);
-        border-radius: var(--radius);
-        background:
-          linear-gradient(rgba(15, 143, 146, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(15, 143, 146, 0.08) 1px, transparent 1px),
-          linear-gradient(145deg, #ffffff, #eaf1ee);
-        background-size: 34px 34px, 34px 34px, 100% 100%;
-        box-shadow: var(--shadow);
-      }
-
-      .media-panel::before,
-      .media-panel::after {
-        content: "";
-        position: absolute;
-        border: 1px solid rgba(15, 143, 146, 0.24);
-        transform: rotateX(58deg) rotateZ(42deg);
-      }
-
-      .media-panel::before {
-        right: 46px;
-        bottom: 82px;
-        width: 208px;
-        height: 152px;
-        background: rgba(255, 255, 255, 0.46);
-        box-shadow: 0 16px 26px rgba(39, 75, 116, 0.12);
-      }
-
-      .media-panel::after {
-        right: 112px;
-        bottom: 158px;
-        width: 96px;
-        height: 124px;
-        background: rgba(255, 255, 255, 0.62);
-      }
-
-      .play-button {
-        position: absolute;
-        left: 34px;
-        bottom: 34px;
-        z-index: 2;
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        border: 0;
-        color: var(--ink);
-        background: rgba(255, 255, 255, 0.86);
-        border-radius: var(--radius);
-        padding: 12px 16px;
-        font-weight: 850;
-        box-shadow: 0 12px 26px rgba(36, 45, 61, 0.13);
-        cursor: pointer;
-      }
-
-      .play-button span {
-        display: grid;
-        width: 34px;
-        height: 34px;
-        place-items: center;
-        border-radius: 999px;
-        color: var(--white);
-        background: var(--teal);
-      }
-
-      .matrix-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 14px;
-      }
-
-      .module-card,
-      .value-card,
-      .service-card {
-        border: 1px solid rgba(230, 223, 209, 0.96);
-        border-radius: var(--radius);
-        background: rgba(255, 255, 255, 0.78);
-        box-shadow: 0 12px 28px rgba(36, 45, 61, 0.06);
-      }
-
-      .module-card {
-        display: grid;
-        min-height: 154px;
-        gap: 14px;
-        padding: 22px;
-      }
-
-      .icon {
-        display: grid;
-        width: 42px;
-        height: 42px;
-        place-items: center;
-        border: 1px solid rgba(15, 143, 146, 0.18);
-        border-radius: var(--radius);
-        color: var(--teal-dark);
-        background: rgba(15, 143, 146, 0.08);
-      }
-
-      .icon svg {
-        width: 22px;
-        height: 22px;
-      }
-
-      .module-card h3,
-      .service-card h3,
-      .value-card h3 {
-        color: var(--ink);
-        font-size: 18px;
-        line-height: 1.3;
-        font-weight: 900;
-      }
-
-      .module-card p,
-      .service-card p,
-      .value-card p {
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .product-section {
-        background:
-          linear-gradient(120deg, rgba(39, 75, 116, 0.94), rgba(12, 98, 100, 0.9)),
-          #18314a;
-        color: var(--white);
-      }
-
-      .product-section .section-kicker {
-        color: #f4c77a;
-      }
-
-      .product-section .section-title,
-      .product-section .section-note {
-        color: var(--white);
-      }
-
-      .product-intro {
-        display: grid;
-        grid-template-columns: 0.82fr 1.18fr;
-        gap: 32px;
-        align-items: start;
-      }
-
-      .product-title {
-        position: sticky;
-        top: 104px;
-      }
-
-      .product-title h2 {
-        font-size: clamp(38px, 5vw, 64px);
-        line-height: 1.04;
-        font-weight: 950;
-      }
-
-      .product-title p {
-        margin-top: 18px;
-        color: rgba(255, 255, 255, 0.82);
-        font-size: 17px;
-      }
-
-      .benefit-columns {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-      }
-
-      .benefit-list {
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: var(--radius);
-        padding: 22px;
-        background: rgba(255, 255, 255, 0.08);
-      }
-
-      .benefit-list h3 {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 16px;
-        color: #fff8e8;
-        font-size: 20px;
-      }
-
-      .benefit-list ul,
-      .space-list {
-        display: grid;
-        gap: 13px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .benefit-list li {
-        color: rgba(255, 255, 255, 0.86);
-        font-size: 14px;
-      }
-
-      .benefit-list strong {
-        color: #fff7e5;
-      }
-
-      .center-layout {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-      }
-
-      .service-card {
-        padding: 26px;
-      }
-
-      .space-list {
-        margin-top: 20px;
-      }
-
-      .space-list li {
-        display: grid;
-        grid-template-columns: 34px 1fr;
-        gap: 12px;
-        align-items: start;
-        color: #465064;
-        font-size: 14px;
-      }
-
-      .space-list b {
-        color: var(--ink);
-      }
-
-      .number {
-        display: grid;
-        width: 30px;
-        height: 30px;
-        place-items: center;
-        border-radius: 999px;
-        color: var(--teal-dark);
-        background: rgba(15, 143, 146, 0.1);
-        font-size: 12px;
-        font-weight: 900;
-      }
-
-      .value-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-      }
-
-      .value-card {
-        min-height: 230px;
-        padding: 28px;
-      }
-
-      .value-card .icon {
-        margin-bottom: 24px;
-      }
-
-      .site-footer {
-        padding: 44px 0;
-        color: rgba(255, 255, 255, 0.82);
-        background: #172033;
-      }
-
-      .footer-layout {
-        display: grid;
-        grid-template-columns: 1fr 1.28fr auto;
-        gap: 28px;
-        align-items: center;
-      }
-
-      .footer-slogan {
-        color: var(--white);
-        font-size: 20px;
-        font-weight: 900;
-      }
-
-      .footer-small {
-        margin-top: 8px;
-        color: rgba(255, 255, 255, 0.62);
-        font-size: 13px;
-      }
-
-      .mobile-menu {
-        display: none;
-      }
-
-      @media (max-width: 980px) {
-        .container {
-          width: min(100% - 28px, var(--container));
-        }
-
+      @media (max-width: 1080px) {
         .nav {
-          min-height: 66px;
-        }
-
-        .brand {
-          min-width: 0;
-          font-size: 14px;
+          grid-template-columns: 1fr auto;
         }
 
         .nav-links {
           display: none;
         }
 
-        .mobile-menu {
-          display: grid;
-        }
-
-        .hero {
-          min-height: auto;
-          padding: 64px 0 380px;
-          background:
-            linear-gradient(180deg, rgba(251, 248, 241, 0.99) 0%, rgba(251, 248, 241, 0.96) 56%, rgba(251, 248, 241, 0.12) 100%),
-            url("assets/hero-industrial-park.png") center bottom 18px / min(94vw, 620px) auto no-repeat,
-            linear-gradient(120deg, #f7f1e5 0%, #eef4f2 100%);
-        }
-
-        .section-head,
-        .about-layout,
-        .product-intro,
-        .center-layout,
-        .footer-layout {
+        .hero,
+        .about-panel,
+        .product-body,
+        .footer-grid {
           grid-template-columns: 1fr;
         }
 
-        .section-head {
-          display: grid;
+        .hero-art {
+          min-height: 430px;
+        }
+
+        .hero-art img {
+          width: min(100%, 620px);
+        }
+
+        .about-panel {
+          gap: 30px;
         }
 
         .matrix-grid,
-        .value-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .benefit-columns {
+        .value-grid,
+        .offline-grid {
           grid-template-columns: 1fr;
         }
 
-        .product-title {
-          position: static;
-        }
-
-        .footer-layout {
-          align-items: start;
+        .offline-card {
+          grid-template-columns: 1fr minmax(210px, 0.7fr);
         }
       }
 
-      @media (max-width: 640px) {
+      @media (max-width: 720px) {
+        .shell {
+          width: 100%;
+        }
+
         .container {
-          width: min(100% - 30px, var(--container));
+          width: min(100% - 28px, var(--container));
         }
 
         .nav {
-          gap: 10px;
+          min-height: 70px;
+          gap: 12px;
         }
 
         .brand {
-          gap: 8px;
+          gap: 9px;
           font-size: 13px;
-          line-height: 1.25;
         }
 
         .brand-mark {
-          flex: 0 0 auto;
           width: 38px;
           height: 38px;
         }
 
-        .nav-actions {
-          gap: 8px;
-        }
-
-        .icon-button {
-          width: 36px;
-          height: 36px;
-          flex: 0 0 auto;
-        }
-
-        .nav-actions .text-link {
+        .contact-pill {
           display: none;
         }
 
         .hero {
-          padding-bottom: 300px;
+          grid-template-columns: 1fr;
+          gap: 8px;
+          min-height: auto;
+          padding-top: 36px;
         }
 
         h1 {
-          max-width: 100%;
-          font-size: clamp(33px, 9.4vw, 38px);
-          line-height: 1.12;
+          margin-top: 24px;
+          font-size: clamp(34px, 10vw, 44px);
+        }
+
+        h1 span {
+          display: block;
         }
 
         .hero-subtitle {
-          font-size: 24px;
-        }
-
-        .lead {
-          max-width: 100%;
-          font-size: 16px;
+          font-size: 25px;
         }
 
         .mobile-break {
           display: block;
         }
 
-        .section {
-          padding: 64px 0;
+        .hero-actions {
+          gap: 10px;
         }
 
-        .matrix-grid,
-        .value-grid {
+        .btn {
+          min-width: 104px;
+          height: 42px;
+        }
+
+        .hero-icons,
+        .about-tags {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .hero-art {
+          min-height: 350px;
+        }
+
+        .hero-visual {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+        }
+
+        .hero-visual img {
+          grid-column: 1 / -1;
+        }
+
+        .data-card {
+          position: static;
+          width: 100%;
+          min-height: 74px;
+          grid-template-columns: 1fr 34px;
+          padding: 12px;
+          border-radius: 12px;
+        }
+
+        .data-number {
+          font-size: 20px;
+        }
+
+        .data-icon {
+          width: 34px;
+          height: 34px;
+          border-radius: 10px;
+        }
+
+        .section {
+          padding: 28px 0;
+        }
+
+        .about-panel,
+        .product-panel {
+          padding: 24px;
+        }
+
+        .section-title {
+          font-size: 28px;
+        }
+
+        .video-card img {
+          min-height: 210px;
+        }
+
+        .matrix-grid {
+          gap: 14px;
+        }
+
+        .module-card {
+          grid-template-columns: 56px 1fr;
+          min-height: 92px;
+          padding: 16px;
+        }
+
+        .icon {
+          width: 48px;
+          height: 48px;
+        }
+
+        .service-columns,
+        .extend .service-items,
+        .offline-card {
           grid-template-columns: 1fr;
         }
 
-        .module-card,
-        .value-card,
-        .service-card,
-        .benefit-list {
-          padding: 20px;
+        .offline-card img {
+          min-height: 190px;
         }
 
-        .media-panel {
-          min-height: 300px;
+        .offline-card::after {
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 58%, rgba(255, 255, 255, 0.28) 100%);
+        }
+
+        .value-card {
+          min-height: 220px;
+        }
+
+        .value-card-content {
+          max-width: 88%;
+        }
+
+        .value-card img {
+          right: -32px;
+          width: 112%;
+          opacity: 0.45;
+        }
+
+        .value-card::after {
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.9) 54%, rgba(255, 255, 255, 0.32) 100%);
+        }
+
+        .value-card-content > p {
+          margin-left: 0;
+        }
+
+        .back-to-top {
+          right: 16px;
+          bottom: 16px;
+          min-width: 48px;
+          width: 48px;
+          height: 48px;
+          padding: 0;
+        }
+
+        .back-to-top span {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+          white-space: nowrap;
         }
       }
     </style>
   </head>
   <body>
-    <header class="site-header">
-      <nav class="container nav" aria-label="主导航">
-        <a class="brand" href="#top" aria-label="筑脸科技文化产融中心首页">
-          <span class="brand-mark" aria-hidden="true">
-            <svg viewBox="0 0 32 32" fill="none">
-              <path d="M16 3 28 10v12L16 29 4 22V10L16 3Z" stroke="currentColor" stroke-width="2.2" />
-              <path d="M10 13h12M10 18h12M14 10v12M18 10v12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
-            </svg>
-          </span>
-          筑脸科技文化产融中心
-        </a>
-        <div class="nav-links">
-          <a href="#top">首页</a>
-          <a href="#about">关于中心</a>
-          <a href="#ecosystem">生态模块</a>
-          <a href="#value">核心价值</a>
-          <a href="#contact">合作我们</a>
-        </div>
-        <div class="nav-actions">
-          <a class="text-link" href="#contact">联系我们</a>
-          <button class="icon-button" type="button" aria-label="全局搜索">
-            <svg viewBox="0 0 24 24" fill="none">
-              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
-              <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </button>
-          <a class="icon-button mobile-menu" href="#ecosystem" aria-label="打开导航">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M5 7h14M5 12h14M5 17h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-            </svg>
+    <div class="shell">
+      <header class="site-header">
+        <nav class="container nav" aria-label="主导航">
+          <a class="brand" href="#top">
+            <span class="brand-mark" aria-hidden="true">
+              <img src="assets/company-logo.png" alt="" />
+            </span>
+            筑脸科技文化产融中心
           </a>
-        </div>
-      </nav>
-    </header>
-
-    <main id="top">
-      <section class="hero" aria-label="筑脸科技文化产融中心">
-        <div class="container hero-content">
-          <div class="eyebrow">科技 × 文化 × 产业 × 金融</div>
-          <h1><span>筑脸科技文化</span><span>产融中心</span></h1>
-          <p class="hero-subtitle">四位一体产业运营平台</p>
-          <p class="lead">以产融为枢纽，串联建筑全生态，<br class="mobile-break" />赋能中小企业共享共富。</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">入驻咨询</a>
-            <a class="btn btn-secondary" href="#center">参展合作</a>
-            <a class="btn btn-secondary" href="#contact">商务洽谈</a>
+          <div class="nav-links">
+            <a href="#top">首页</a>
+            <a href="#about">关于筑脸</a>
+            <a href="#ecosystem">产业生态矩阵</a>
+            <a href="#product">筑脸宝</a>
+            <a href="#contact">合作我们</a>
           </div>
-        </div>
-      </section>
-
-      <section id="about" class="section">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <p class="section-kicker">ABOUT ZHULIAN</p>
-              <h2 class="section-title">关于筑脸</h2>
-            </div>
-            <p class="section-note">线上数字平台与线下实体场景双载体，构建科技赋能、产业协同、文化赋能、资本助力的新型建筑产业服务生态。</p>
+          <div class="nav-actions">
+            <a class="contact-pill login-pill" href="https://www.buildface.com/login" target="_blank" rel="noopener">登录</a>
+            <a class="contact-pill" href="#contact">联系我们</a>
+            <button class="search-button" type="button" aria-label="搜索">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+                <path d="m16.5 16.5 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
           </div>
-          <div class="about-layout">
-            <div class="article-copy">
-              <p>筑脸，深耕建筑产业十余载，是集数字化科技、产业会展、文化文创、产融服务于一体的建筑全产业链生态运营品牌。</p>
-              <p>线上，筑脸拥有完整的建筑产业数字化生态体系，涵盖建筑产业门户、AI 数字供应链、建材交易商城、企业风控查询、线上招标、全民分销等多元功能，为建筑中小企业提供找项目、找资源、做交易、控成本、拓渠道的一站式数字化解决方案。</p>
-              <p>线下，筑脸打造科技文化产融中心实体产业综合体，集聚产业峰会、建材博览会、商务洽谈、工程咨询、文创文旅、场地运营、政企对接等全场景服务，常态化开展行业论坛、供需对接、品牌展示、产融合作。</p>
-              <p>十余载深耕积淀，筑脸始终以“链接建筑全产业链，赋能中小企业成长”为核心使命，持续推动建筑行业数字化、阳光化、规范化、高质量发展。</p>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="container hero">
+          <div class="hero-copy">
+            <div class="eyebrow">科技 × 文化 × 产业 × 金融</div>
+            <h1><span>筑脸科技文化</span><span>产融中心</span></h1>
+            <p class="hero-subtitle">四位一体产业运营平台</p>
+            <p class="lead">以产融为枢纽，串联建筑全生态，<br class="mobile-break" />赋能中小企业共享共富。</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">入驻咨询</a>
+              <a class="btn" href="#center">参展合作</a>
+              <a class="btn" href="#contact">商务洽谈</a>
             </div>
-            <div class="media-panel" aria-label="筑脸介绍视频占位">
-              <button class="play-button" type="button">
-                <span aria-hidden="true">▶</span>
-                VCR 视频播放
+            <div class="hero-icons">
+              <div class="mini-feature">
+                <span class="icon" aria-hidden="true"><img src="assets/icons/service-resource.svg" alt="" /></span>
+                <span>数字驱动</span>
+              </div>
+              <div class="mini-feature">
+                <span class="icon" aria-hidden="true"><img src="assets/icons/eco-collab.svg" alt="" /></span>
+                <span>生态协同</span>
+              </div>
+              <div class="mini-feature">
+                <span class="icon" aria-hidden="true"><img src="assets/icons/value-flow.svg" alt="" /></span>
+                <span>产融共生</span>
+              </div>
+              <div class="mini-feature">
+                <span class="icon" aria-hidden="true"><img src="assets/icons/about-finance.svg" alt="" /></span>
+                <span>共创共富</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="hero-visual" aria-label="筑脸产业数据概览">
+              <img src="assets/mockup/hero-campus-focused.png" alt="筑脸科技文化产融中心产业生态主视觉" />
+              <button class="data-card data-card-ecosystem is-active" type="button" aria-pressed="true" data-detail="企业伙伴生态">
+                <span>
+                  <span class="data-label">生态伙伴</span>
+                  <span class="data-number">3000+</span>
+                  <span class="data-desc">企业伙伴</span>
+                </span>
+                <span class="data-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM4 19c0-2.4 1.8-4 4-4s4 1.6 4 4M12 19c0-2.4 1.8-4 4-4s4 1.6 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  </svg>
+                </span>
+              </button>
+              <button class="data-card data-card-projects" type="button" aria-pressed="false" data-detail="累计项目数据">
+                <span>
+                  <span class="data-label">服务项目</span>
+                  <span class="data-number">10000+</span>
+                  <span class="data-desc">累计项目数</span>
+                </span>
+                <span class="data-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M6 4h9l3 3v13H6V4Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                    <path d="M14 4v4h4M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  </svg>
+                </span>
+              </button>
+              <button class="data-card data-card-city" type="button" aria-pressed="false" data-detail="全国城市覆盖">
+                <span>
+                  <span class="data-label">覆盖城市</span>
+                  <span class="data-number">3000+</span>
+                  <span class="data-desc">全国城市</span>
+                </span>
+                <span class="data-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11Z" stroke="currentColor" stroke-width="1.8" />
+                    <circle cx="12" cy="10" r="2.2" stroke="currentColor" stroke-width="1.8" />
+                  </svg>
+                </span>
+              </button>
+              <button class="data-card data-card-enterprise" type="button" aria-pressed="false" data-detail="中小企业服务">
+                <span>
+                  <span class="data-label">赋能企业</span>
+                  <span class="data-number">50000+</span>
+                  <span class="data-desc">中小企业</span>
+                </span>
+                <span class="data-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M5 19V9M10 19V5M15 19v-7M20 19V8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    <path d="M4 19h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                  </svg>
+                </span>
               </button>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="ecosystem" class="section">
-        <div class="container">
-          <div class="section-head">
+        <section id="about" class="section">
+          <div class="container panel about-panel">
             <div>
-              <p class="section-kicker">ECOSYSTEM MATRIX</p>
-              <h2 class="section-title">全域生态矩阵</h2>
+              <h2 class="section-title title-mark">关于筑脸</h2>
+              <div class="copy">
+                <p>筑脸科技文化产融中心是数字科技、产业会展、文化创意与产业金融深度融合的建筑产业生态运营平台。</p>
+                <p>我们以科技为引擎、文化为底蕴、产业为根基、金融为动能，将线上线下融合、全域联动的一体化服务体系落地，助力建筑行业数字化转型，推动产业协同与价值共创。</p>
+              </div>
+              <div class="about-tags">
+                <div class="mini-feature">
+                  <span class="icon" aria-hidden="true"><img src="assets/icons/matrix-zhulianwang.svg" alt="" /></span>
+                  <span>科技引擎</span>
+                </div>
+                <div class="mini-feature">
+                  <span class="icon" aria-hidden="true"><img src="assets/icons/about-culture.svg" alt="" /></span>
+                  <span>文化赋能</span>
+                </div>
+                <div class="mini-feature">
+                  <span class="icon" aria-hidden="true"><img src="assets/icons/matrix-zhulianbao.svg" alt="" /></span>
+                  <span>产业聚合</span>
+                </div>
+                <div class="mini-feature">
+                  <span class="icon" aria-hidden="true"><img src="assets/icons/matrix-youxuan.svg" alt="" /></span>
+                  <span>金融驱动</span>
+                </div>
+              </div>
             </div>
-            <p class="section-note">九大筑脸生态核心模块，贯通门户、供应链、风控、会展、咨询、电商与共享分销。</p>
+            <div class="video-card">
+              <video controls preload="metadata" poster="assets/mockup/about-video.png" aria-label="筑脸中心 VCR 视频介绍">
+                <source src="assets/videos/vcr-intro.mp4" type="video/mp4" />
+                您的浏览器暂不支持视频播放。
+              </video>
+            </div>
           </div>
-          <div class="matrix-grid">
-            <article class="module-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4zM4 9h16" stroke="currentColor" stroke-width="2"/><path d="M8 13h3M8 16h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>筑脸网</h3>
-              <p>建筑产业数字化综合门户</p>
-            </article>
-            <article class="module-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 20 8v8l-8 5-8-5V8l8-5Z" stroke="currentColor" stroke-width="2"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>筑脸宝</h3>
-              <p>中小企业数字供应链 AI 服务系统</p>
-            </article>
-            <article class="module-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><circle cx="10" cy="10" r="5" stroke="currentColor" stroke-width="2"/><path d="m14 14 5 5M8 10l1.5 1.5L13 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>筑脸爱查查</h3>
-              <p>企业信用、资质、风险免费查询工具</p>
-            </article>
-            <article class="module-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 17h16M6 17V9l6-4 6 4v8M9 17v-5h6v5" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
-              <h3>筑脸供应链</h3>
-              <p>建材资源库、市场价 / 协议价、电子招标服务</p>
-            </article>
-            <article class="module-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 6h14v12H5zM8 3v5M16 3v5M8 12h8M8 15h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>筑脸建博会</h3>
-              <p>建筑建材行业线下峰会供需博览平台</p>
-            </article>
-            <article class="module-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18 9 8l4 7 3-5 4 8H4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>筑脸远岫</h3>
-              <p>建筑数字化与共富产业综合运营服务商</p>
-            </article>
-            <article class="module-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10v16H7zM10 8h4M10 12h4M10 16h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>筑脸全咨</h3>
-              <p>筑脸全过程工程咨询专业机构</p>
-            </article>
-            <article class="module-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M6 7h15l-2 8H8L6 7ZM6 7 5 4H2M9 20h.01M18 20h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>筑脸优选</h3>
-              <p>建筑建材垂直电商采购商城</p>
-            </article>
-            <article class="module-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M7 9a4 4 0 1 1 8 0v1h2a3 3 0 0 1 0 6h-2l-4 4v-4H8a3 3 0 0 1-1-5.83" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
-              <h3>筑脸说</h3>
-              <p>全民推客共享共富分销小程序</p>
-            </article>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="product" class="section product-section">
-        <div class="container product-intro">
-          <div class="product-title">
-            <p class="section-kicker">DIGITAL SUPPLY CHAIN AI</p>
-            <h2>筑脸宝</h2>
-            <p>中小企业数字供应链 AI 服务解决方案，分为核心服务与延伸增值服务两大体系。</p>
-          </div>
-          <div class="benefit-columns">
-            <div class="benefit-list">
-              <h3>◇ 核心服务</h3>
-              <ul>
-                <li><strong>入驻筑脸：</strong>企业认证开通系统账号，生成专属筑脸号、线上企业黄页。</li>
-                <li><strong>找资源服务：</strong>智能匹配建材厂商、施工队伍、劳务、设备上下游合作资源。</li>
-                <li><strong>找项目服务：</strong>实时推送政企、总包、地产各类招标、在建、待建工程商机。</li>
-                <li><strong>AI 促成交易：</strong>系统撮合供需双方，配套专业团队一对一商务对接。</li>
-                <li><strong>黄酒社交配套：</strong>VIP 合作企业赠送专属绍作中兴黄酒商务礼品。</li>
-              </ul>
+        <section id="ecosystem" class="section">
+          <div class="container">
+            <div class="center-title">
+              <h2 class="section-title title-mark">全域生态矩阵</h2>
             </div>
-            <div class="benefit-list">
-              <h3>∞ 延伸服务</h3>
-              <ul>
-                <li><strong>智能云盒：</strong>4 线程 4G 专用硬件，支持系统本地离线部署、独立云端管理。</li>
-                <li><strong>GEO 地域精准服务：</strong>同城本地化流量分发，区域建材供需精准推广引流。</li>
-                <li><strong>品牌库 / 信息价入库：</strong>面向工程采购商长期曝光，支撑投标与成本核算。</li>
-                <li><strong>业务撮合与推客分销：</strong>线下跟进大额集采、长期供货项目，接入共享分销生态。</li>
-                <li><strong>定制化赋能：</strong>文创开发、成本控制、职称评定、项目联合合作与高端资源对接。</li>
-              </ul>
+            <div class="matrix-grid">
+              <a class="module-card" href="https://www.buildface.com/" target="_blank" rel="noopener" aria-label="访问筑脸网官网"><span class="icon" aria-hidden="true"><img src="assets/icons/ecosystem-zhulianwang.svg" alt="" /></span><div><h3>筑脸网</h3><p>建筑产业信息服务与商机对接平台</p></div></a>
+              <a class="module-card" href="https://www.buildface.com/home/news/info/id/10040597.html" target="_blank" rel="noopener" aria-label="访问筑脸宝介绍"><span class="icon" aria-hidden="true"><img src="assets/icons/ecosystem-zhulianbao.svg" alt="" /></span><div><h3>筑脸宝</h3><p>数字供应链 AI 服务解决方案平台</p></div></a>
+              <a class="module-card" href="https://www.aichacha.net/" target="_blank" rel="noopener" aria-label="访问筑脸爱查查"><span class="icon" aria-hidden="true"><img src="assets/icons/ecosystem-aichacha.svg" alt="" /></span><div><h3>筑脸爱查查</h3><p>企业/项目/信用数据查询平台</p></div></a>
+              <a class="module-card" href="http://www.buildface.cn/portal/index" target="_blank" rel="noopener" aria-label="访问筑脸供应链"><span class="icon" aria-hidden="true"><img src="assets/icons/ecosystem-supplychain.svg" alt="" /></span><div><h3>筑脸供应链</h3><p>供应链整合与协同服务平台</p></div></a>
+              <a class="module-card" href="http://fh.buildface.net/" target="_blank" rel="noopener" aria-label="访问筑脸建博会"><span class="icon" aria-hidden="true"><img src="assets/icons/ecosystem-jianbohui.svg" alt="" /></span><div><h3>筑脸建博会</h3><p>建筑产业会展与品牌展示平台</p></div></a>
+              <a class="module-card" href="http://yuanxiu.buildface.com/" target="_blank" rel="noopener" aria-label="访问筑脸远岫"><span class="icon" aria-hidden="true"><img src="assets/icons/ecosystem-yuanxiu.svg" alt="" /></span><div><h3>筑脸远岫</h3><p>数字内容与知识共创平台</p></div></a>
+              <a class="module-card" href="http://quanzhi.buildface.com/" target="_blank" rel="noopener" aria-label="访问筑脸全咨"><span class="icon" aria-hidden="true"><img src="assets/icons/ecosystem-quanzi.svg" alt="" /></span><div><h3>筑脸全咨</h3><p>全过程工程咨询综合服务平台</p></div></a>
+              <a class="module-card" href="https://mall.buildface.com/home/Store/index.html?store_id=8&amp;storeclass=12" target="_blank" rel="noopener" aria-label="访问筑脸优选"><span class="icon" aria-hidden="true"><img src="assets/icons/ecosystem-youxuan.svg" alt="" /></span><div><h3>筑脸优选</h3><p>优质产品与服务甄选平台</p></div></a>
+              <a class="module-card" href="#value" aria-label="查看筑脸说"><span class="icon" aria-hidden="true"><img src="assets/icons/ecosystem-zhulianshuo.svg" alt="" /></span><div><h3>筑脸说</h3><p>行业观点与价值传播平台</p></div></a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="center" class="section">
-        <div class="container">
-          <div class="section-head">
+        <section id="product" class="section">
+          <div class="container panel product-panel">
+            <h2 class="section-title title-mark">筑脸宝</h2>
+            <p class="product-note">中小企业数字供应链 AI 服务解决方案，以数据为基、AI 为链，连接资源与需求，促成高效交易与持续增长。</p>
+            <div class="product-body">
+              <div class="ai-visual"><img src="assets/mockup/ai-platform.png" alt="筑脸宝 AI 服务系统" /></div>
+              <div class="service-columns">
+                <article class="service-list">
+                  <h3>核心服务</h3>
+                  <div class="service-items">
+                    <div class="service-item"><span>01</span>入驻筑脸</div>
+                    <div class="service-item"><span>02</span>找资源服务</div>
+                    <div class="service-item"><span>03</span>找项目服务</div>
+                    <div class="service-item"><span>04</span>AI 促成交易服务</div>
+                    <div class="service-item"><span>05</span>黄酒社交配套服务</div>
+                  </div>
+                </article>
+                <article class="service-list extend">
+                  <h3>延伸增值服务</h3>
+                  <div class="service-items">
+                    <div class="service-item"><span>01</span>智能云盒</div>
+                    <div class="service-item"><span>02</span>GEO 地域精准服务</div>
+                    <div class="service-item"><span>03</span>品牌库入库</div>
+                    <div class="service-item"><span>04</span>信息价入库</div>
+                    <div class="service-item"><span>05</span>深度业务撮合</div>
+                    <div class="service-item"><span>06</span>推客分销通道</div>
+                    <div class="service-item"><span>07</span>文创开发</div>
+                    <div class="service-item"><span>08</span>成本控制</div>
+                    <div class="service-item"><span>09</span>职称评定</div>
+                    <div class="service-item"><span>10</span>深度项目联合合作</div>
+                    <div class="service-item"><span>11</span>定制化企业赋能</div>
+                    <div class="service-item"><span>12</span>高端深度资源对接</div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="center" class="section">
+          <div class="container">
+            <div class="offline-title">
+              <h2 class="section-title title-mark">筑脸科技文化产融中心线下实体矩阵</h2>
+            </div>
+            <div class="offline-grid">
+              <article class="offline-card">
+                <div>
+                  <h3>产融中心项目载体</h3>
+                  <div class="offline-list">
+                    <p><span>01</span>蠡城・筑梦殿堂</p>
+                    <p><span>02</span>戴葆庭钱币文化博物馆</p>
+                    <p><span>03</span>筑脸全过程工程咨询机构</p>
+                    <p><span>04</span>筑脸藏院</p>
+                    <p><span>05</span>筑脸 OPC 社区</p>
+                    <p><span>06</span>筑脸文创中心</p>
+                    <p><span>07</span>筑脸 AI+产融中心</p>
+                  </div>
+                </div>
+                <img src="assets/mockup/offline-carrier.webp" alt="产融中心建筑空间" />
+              </article>
+              <article class="offline-card gold">
+                <div>
+                  <h3>产融中心配套服务内容</h3>
+                  <div class="offline-list">
+                    <p><span>01</span>会议沙龙服务</p>
+                    <p><span>02</span>数字直播服务</p>
+                    <p><span>03</span>食宿接待服务</p>
+                    <p><span>04</span>特色体验服务</p>
+                    <p><span>05</span>社交休闲服务</p>
+                    <p><span>06</span>文创文旅服务</p>
+                    <p><span>07</span>综合配套服务</p>
+                    <p><span>08</span>特色租赁服务</p>
+                  </div>
+                </div>
+                <img src="assets/mockup/offline-service.webp" alt="产融中心配套服务空间" />
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="value" class="section">
+          <div class="container">
+            <div class="center-title">
+              <h2 class="section-title title-mark">入驻合作核心价值</h2>
+            </div>
+            <div class="value-grid">
+              <article class="value-card">
+                <div class="value-card-content">
+                  <div class="value-card-head">
+                    <span class="icon">♚</span>
+                    <h3>线下场馆流量曝光</h3>
+                  </div>
+                  <p>依托高品质线下载体与会展活动，精准触达行业人群，提升品牌影响力与市场曝光。</p>
+                </div>
+                <img src="assets/mockup/value-venue.webp" alt="" />
+              </article>
+              <article class="value-card">
+                <div class="value-card-content">
+                  <div class="value-card-head">
+                    <span class="icon">◎</span>
+                    <h3>线上全生态全域赋能</h3>
+                  </div>
+                  <p>打通线上生态矩阵与数字工具，提供资源、流量、数据等 AI 能力，企业赋能更支持。</p>
+                </div>
+                <img src="assets/mockup/value-ecosystem.webp" alt="" />
+              </article>
+              <article class="value-card">
+                <div class="value-card-content">
+                  <div class="value-card-head">
+                    <span class="icon">◈</span>
+                    <h3>政企资本资源对接</h3>
+                  </div>
+                  <p>链接政府资源、金融机构与产业资本，助力企业获得资金支持与战略合作机会。</p>
+                </div>
+                <img src="assets/mockup/value-capital.webp" alt="" />
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-banner">
+          <div class="container">
             <div>
-              <p class="section-kicker">OFFLINE ENTITY MATRIX</p>
-              <h2 class="section-title">筑脸科技文化产融中心线下实体矩阵</h2>
+              <h2>科技赋能・文化传承・产业协同・产融共生</h2>
+              <p>携手筑脸，共建建筑产业新生态</p>
             </div>
-            <p class="section-note">以线下场馆、会展接待、工程咨询、文创文旅与 AI 体验中心形成复合型产业承载空间。</p>
+            <a class="cta-button" href="#contact">立即入驻合作 →</a>
           </div>
-          <div class="center-layout">
-            <article class="service-card">
-              <h3>产融中心项目载体</h3>
-              <ul class="space-list">
-                <li><span class="number">01</span><span><b>蠡城・筑梦殿堂：</b>产业峰会、建材博览会、千人主会场主场馆。</span></li>
-                <li><span class="number">02</span><span><b>戴葆庭钱币文化博物馆：</b>古钱币收藏展示、宋韵文化研学文旅展厅。</span></li>
-                <li><span class="number">03</span><span><b>筑脸全过程工程咨询机构：</b>造价、监理、工程全流程专业咨询办公空间。</span></li>
-                <li><span class="number">04</span><span><b>筑脸藏院：</b>传统文化藏品、建筑文脉展示品鉴空间。</span></li>
-                <li><span class="number">05</span><span><b>筑脸 OPC 社区：</b>建筑从业者线下交流、人脉对接、同业社群活动空间。</span></li>
-                <li><span class="number">06</span><span><b>筑脸文创中心：</b>黄酒文创、建筑文创设计、展示、体验展厅。</span></li>
-                <li><span class="number">07</span><span><b>筑脸 AI + 产融中心：</b>数字化系统演示、AI 产业技术落地体验中心。</span></li>
-              </ul>
-            </article>
-            <article class="service-card">
-              <h3>产融中心配套服务内容</h3>
-              <ul class="space-list">
-                <li><span class="number">01</span><span><b>会议沙龙服务：</b>行业论坛、私董会、供需对接会、招商推介会承办。</span></li>
-                <li><span class="number">02</span><span><b>数字直播服务：</b>产业线上直播、元宇宙云展会、品牌演播带货。</span></li>
-                <li><span class="number">03</span><span><b>食宿接待服务：</b>高端商务宴请、外地客商食宿、会务一站式接待。</span></li>
-                <li><span class="number">04</span><span><b>特色体验服务：</b>钱币博物馆参观、绍作中兴黄酒沉浸式品鉴体验。</span></li>
-                <li><span class="number">05</span><span><b>社交休闲服务：</b>商务茶室、会客休闲、同业轻交流洽谈空间。</span></li>
-                <li><span class="number">06</span><span><b>文创文旅服务：</b>团体研学参观、文旅活动策划、文创礼品定制。</span></li>
-                <li><span class="number">07</span><span><b>综合配套服务：</b>品牌入驻孵化、产融资本咨询、全流程运营配套。</span></li>
-                <li><span class="number">08</span><span><b>特色租赁服务：</b>展厅、会议室、演播厅、活动场地对外长短租。</span></li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      <section id="value" class="section">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <p class="section-kicker">PARTNERSHIP VALUE</p>
-              <h2 class="section-title">入驻合作核心价值</h2>
-            </div>
-            <p class="section-note">科技赋能・文化传承・产业协同・产融共生。</p>
+      <footer id="contact" class="footer">
+        <div class="container footer-grid">
+          <div>
+            <a class="brand" href="#top">
+              <span class="brand-mark" aria-hidden="true">
+                <img src="assets/company-logo.png" alt="" />
+              </span>
+              <span>筑脸科技文化产融中心</span>
+            </a>
+            <p class="footer-small">运营主体：浙江筑脸网络科技有限公司</p>
           </div>
-          <div class="value-grid">
-            <article class="value-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19h16M6 19V8l6-4 6 4v11M9 19v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
-              <h3>线下场馆流量曝光</h3>
-              <p>常年举办峰会、建博会，精准触达全国工程采购、施工企业客源。</p>
-            </article>
-            <article class="value-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18h16M6 15l4-4 3 3 5-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 7h2v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>线上全生态全域赋能</h3>
-              <p>打通筑脸全线上平台，系统、流量、推客渠道同步赋能企业拓客。</p>
-            </article>
-            <article class="value-card">
-              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M5 5h14v12H5zM8 9h8M8 13h5M15 17l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
-              <h3>政企资本资源对接</h3>
-              <p>直通住建、城投、金融资本、行业头部企业，获取项目与资金资源。</p>
-            </article>
+          <div>
+            <p class="footer-slogan">4000 年筑道，3000 城筑梦</p>
+            <p class="footer-small">链接建筑全产业链，赋能中小企业成长</p>
+          </div>
+          <div class="qr" aria-label="筑脸合作二维码">
+            <img src="assets/footer-qr.png" alt="筑脸合作二维码" />
+          </div>
+          <div>
+            <a class="cta-button" href="javascript:void(0)">扫码了解合作</a>
+            <p class="footer-small">长按识别二维码</p>
           </div>
         </div>
-      </section>
-    </main>
+      </footer>
+    </div>
+    <button class="back-to-top" type="button" aria-label="返回顶部">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+      <span>返回顶部</span>
+    </button>
+    <script>
+      const dataCards = document.querySelectorAll(".data-card");
+      const backToTop = document.querySelector(".back-to-top");
 
-    <footer id="contact" class="site-footer">
-      <div class="container footer-layout">
-        <div>
-          <strong>筑脸科技文化产融中心</strong>
-          <p class="footer-small">运营主体：浙江筑脸网络科技有限公司</p>
-        </div>
-        <div>
-          <p class="footer-slogan">4000 年筑道，3000 城筑梦</p>
-          <p class="footer-small">链接建筑全产业链，赋能中小企业成长</p>
-        </div>
-        <div class="footer-actions">
-          <a class="btn btn-gold" href="javascript:void(0)">扫码了解合作</a>
-        </div>
-      </div>
-    </footer>
+      dataCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          dataCards.forEach((item) => {
+            item.classList.remove("is-active");
+            item.setAttribute("aria-pressed", "false");
+          });
+
+          card.classList.add("is-active");
+          card.setAttribute("aria-pressed", "true");
+        });
+      });
+
+      const toggleBackToTop = () => {
+        if (!backToTop) return;
+        backToTop.classList.toggle("is-visible", window.scrollY > 520);
+      };
+
+      window.addEventListener("scroll", toggleBackToTop, { passive: true });
+      toggleBackToTop();
+
+      backToTop?.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
   </body>
 </html>
