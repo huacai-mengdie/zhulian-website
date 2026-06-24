@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="_未命名的渐变_19" data-name="未命名的渐变 19" x1="9.84" y1="55.34" x2="41.13" y2="1.14" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#197bf9"/>
+      <stop offset="1" stop-color="#35b8ff"/>
+    </linearGradient>
+  </defs>
+  <path d="M18.72,25.14h19.26v29.45s-29.45,0-29.45,0c0-14.98,0-29.96,0-44.94h10.18v15.5h0ZM18.49,35.1v9.52s9.52,0,9.52,0v-9.52s-9.52,0-9.52,0ZM41.08,23.81h14.39s0-14.39,0-14.39h-14.39s0,14.39,0,14.39Z" style="fill: url(#_未命名的渐变_19); fill-rule: evenodd;"/>
+</svg>
